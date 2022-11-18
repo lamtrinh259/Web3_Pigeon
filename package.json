@@ -2,7 +2,7 @@
   "devDependencies": {
     "typescript": "^4.8.4"
   },
-  "name": "web3_pigeon-main",
+  "name": "web3_pigeon",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
