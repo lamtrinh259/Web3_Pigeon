@@ -13,6 +13,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/index.js"
   },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamtrinh259/Web3_Pigeon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamtrinh259/Web3_Pigeon/issues"
+  },
+  "homepage": "https://github.com/lamtrinh259/Web3_Pigeon#readme",
   "author": "",
   "license": "ISC",
   "description": ""
