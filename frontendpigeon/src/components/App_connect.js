@@ -10,8 +10,6 @@ function App() {
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
 
 
-  const contractAddress = "0x9C3cF4D4Cb1D0476A871A49A4195E3351fffe5Bf";
-
   useEffect(() => {
     if (window.ethereum) {
       setIsWalletInstalled(true);

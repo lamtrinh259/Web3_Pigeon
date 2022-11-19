@@ -1,5 +1,27 @@
 {
   "devDependencies": {
     "typescript": "^4.8.4"
-  }
+  },
+  "name": "web3_pigeon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamtrinh259/Web3_Pigeon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamtrinh259/Web3_Pigeon/issues"
+  },
+  "homepage": "https://github.com/lamtrinh259/Web3_Pigeon#readme",
+  "description": ""
 }
