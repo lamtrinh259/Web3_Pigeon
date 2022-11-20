@@ -1,11 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const sdk_1 = require("@uniswap/sdk");
-console.log(`The chainId of mainnet is ${sdk_1.ChainId.MAINNET}.`);
-const chainId = sdk_1.ChainId.MAINNET;
-const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F'; // must be checksummed
-const decimals = 18;
-// const DAI = new Token(chainId, tokenAddress, decimals)
 const endpoint1 = { "ethprice": 100 };
 const endpoint2 = { "btcprice": 300 };
 console.log("endpoint1", endpoint1);
