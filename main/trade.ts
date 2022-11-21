@@ -11,16 +11,16 @@ console.log(String(process.env.PTEKEY))
 // console.log("provider",provider)
 // const wallet = new ethers.Wallet(String(process.env.PTEKEY), provider)
 // console.log("wallet",wallet)
-// console.log(ChainId)
+console.log("ChainId",ChainId)
 // note that you may want/need to handle this async code differently,
 // for example if top-level await is not an option
-const chainId = ChainId.MATIC //ChainId.MATIC
+const chainId = ChainId.MUMBAI //ChainId.MATIC
 const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F' // must be checksummed
 const decimals = 18
 const DAI = new Token(chainId, tokenAddress, decimals)
 console.log("DAI",DAI)
 console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
-console.log("WETH",WETH)
+// console.log("WETH",WETH)
 // const provider_ = getDefaultProvider(getNetwork(chainId))
 // console.log(provider.getNetwork())
 
@@ -48,6 +48,7 @@ console.log("WETH",WETH)
 
 // // // note that you may want/need to handle this async code differently,
 // // // for example if top-level await is not an option
+
 const fetchPair = async () =>{
     const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId])
     console.log("pair", pair);

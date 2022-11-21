@@ -42,16 +42,16 @@ console.log(String(process.env.PTEKEY));
 // console.log("provider",provider)
 // const wallet = new ethers.Wallet(String(process.env.PTEKEY), provider)
 // console.log("wallet",wallet)
-// console.log(ChainId)
+console.log("ChainId", quickswap_sdk_1.ChainId);
 // note that you may want/need to handle this async code differently,
 // for example if top-level await is not an option
-const chainId = quickswap_sdk_1.ChainId.MATIC; //ChainId.MATIC
+const chainId = quickswap_sdk_1.ChainId.MUMBAI; //ChainId.MATIC
 const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F'; // must be checksummed
 const decimals = 18;
 const DAI = new quickswap_sdk_1.Token(chainId, tokenAddress, decimals);
 console.log("DAI", DAI);
 console.log("WETH[DAI.chainId]", quickswap_sdk_1.WETH[DAI.chainId]);
-console.log("WETH", quickswap_sdk_1.WETH);
+// console.log("WETH",WETH)
 // const provider_ = getDefaultProvider(getNetwork(chainId))
 // console.log(provider.getNetwork())
 // const fetchNetwork = async () =>{
