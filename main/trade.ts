@@ -7,7 +7,8 @@ import { Percent } from 'quickswap-sdk'
 import { ethers } from "ethers"
 
 console.log(String(process.env.PTEKEY))
-// const provider = new ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
+console.log(String(process.env.MUMBAI_URL))
+const provider = new ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
 // console.log("provider",provider)
 // const wallet = new ethers.Wallet(String(process.env.PTEKEY), provider)
 // console.log("wallet",wallet)
@@ -50,7 +51,7 @@ console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
 // // // for example if top-level await is not an option
 
 const fetchPair = async () =>{
-    const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId])
+    const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId,provider)
     console.log("pair", pair);
     return pair
 }

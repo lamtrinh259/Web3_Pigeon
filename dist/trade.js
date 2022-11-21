@@ -37,8 +37,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const quickswap_sdk_1 = require("quickswap-sdk");
+const ethers_1 = require("ethers");
 console.log(String(process.env.PTEKEY));
-// const provider = new ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
+console.log(String(process.env.MUMBAI_URL));
+const provider = new ethers_1.ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
 // console.log("provider",provider)
 // const wallet = new ethers.Wallet(String(process.env.PTEKEY), provider)
 // console.log("wallet",wallet)
@@ -75,7 +77,7 @@ console.log("WETH[DAI.chainId]", quickswap_sdk_1.WETH[DAI.chainId]);
 // // // note that you may want/need to handle this async code differently,
 // // // for example if top-level await is not an option
 const fetchPair = () => __awaiter(void 0, void 0, void 0, function* () {
-    const pair = yield quickswap_sdk_1.Fetcher.fetchPairData(DAI, quickswap_sdk_1.WETH[DAI.chainId]);
+    const pair = yield quickswap_sdk_1.Fetcher.fetchPairData(DAI, quickswap_sdk_1.WETH[DAI.chainId, provider]);
     console.log("pair", pair);
     return pair;
 });
