@@ -6,21 +6,21 @@ import { ChainId, Token, WETH, Fetcher, Trade, Route, TokenAmount, TradeType } f
 import { Percent } from 'quickswap-sdk'
 import { ethers } from "ethers"
 
-console.log(String(process.env.PTEKEY))
+console.log(String(process.env.PRIVATE_KEY))
 console.log(String(process.env.MUMBAI_URL))
 const provider = new ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
 // console.log("provider",provider)
 // const wallet = new ethers.Wallet(String(process.env.PTEKEY), provider)
 // console.log("wallet",wallet)
-console.log("ChainId",ChainId)
+console.log("ChainId", ChainId)
 // note that you may want/need to handle this async code differently,
 // for example if top-level await is not an option
 const chainId = ChainId.MUMBAI //ChainId.MATIC
 const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F' // must be checksummed
 const decimals = 18
 const DAI = new Token(chainId, tokenAddress, decimals)
-console.log("DAI",DAI)
-console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
+console.log("DAI", DAI)
+console.log("WETH[DAI.chainId]", WETH[DAI.chainId])
 // console.log("WETH",WETH)
 // const provider_ = getDefaultProvider(getNetwork(chainId))
 // console.log(provider.getNetwork())
@@ -31,7 +31,7 @@ console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
 //     return netowrk
 // }
 
-// const promise3 = Promise.resolve(fetchNetwork()); 
+// const promise3 = Promise.resolve(fetchNetwork());
 // promise3.then((value3) => {
 //   console.log("value3", value3);
 // });
@@ -41,7 +41,7 @@ console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
 //     return DAI
 // }
 
-// const promise2 = Promise.resolve(fetchDAI()); 
+// const promise2 = Promise.resolve(fetchDAI());
 // promise2.then((value2) => {
 //   console.log("value2", value2);
 // });
@@ -50,10 +50,10 @@ console.log("WETH[DAI.chainId]",WETH[DAI.chainId])
 // // // note that you may want/need to handle this async code differently,
 // // // for example if top-level await is not an option
 
-const fetchPair = async () =>{
-    const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId,provider)
-    console.log("pair", pair);
-    return pair
+const fetchPair = async () => {
+  const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId, provider)
+  console.log("pair", pair);
+  return pair
 }
 const promise1 = Promise.resolve(fetchPair());
 promise1.then((value) => {
