@@ -38,7 +38,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const quickswap_sdk_1 = require("quickswap-sdk");
 const ethers_1 = require("ethers");
-console.log(String(process.env.PTEKEY));
+console.log(String(process.env.PRIVATE_KEY));
 console.log(String(process.env.MUMBAI_URL));
 const provider = new ethers_1.ethers.providers.JsonRpcProvider(String(process.env.MUMBAI_URL));
 // console.log("provider",provider)
@@ -61,7 +61,7 @@ console.log("WETH[DAI.chainId]", quickswap_sdk_1.WETH[DAI.chainId]);
 //     // console.log("DAI",DAI)
 //     return netowrk
 // }
-// const promise3 = Promise.resolve(fetchNetwork()); 
+// const promise3 = Promise.resolve(fetchNetwork());
 // promise3.then((value3) => {
 //   console.log("value3", value3);
 // });
@@ -70,7 +70,7 @@ console.log("WETH[DAI.chainId]", quickswap_sdk_1.WETH[DAI.chainId]);
 //     // console.log("DAI",DAI)
 //     return DAI
 // }
-// const promise2 = Promise.resolve(fetchDAI()); 
+// const promise2 = Promise.resolve(fetchDAI());
 // promise2.then((value2) => {
 //   console.log("value2", value2);
 // });
