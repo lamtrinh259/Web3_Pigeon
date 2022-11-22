@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Contract, ethers } from "ethers";
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import "./App_connect.css";
+import "./Appconnect.css";
+// import { useNavigate } from "react-router-dom";
+
+// const navigate = useNavigate();
 
 
-function App() {
+function Apps_home() {
   const [account, setAccount] = useState("");
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
 
@@ -22,7 +25,9 @@ function App() {
     window.ethereum.request({ method: "eth_requestAccounts", })
       .then((accounts) => {
         setAccount(accounts[0])
-        console.log(account)
+        console.log("account",accounts)
+          navigate(`/apps_home`);
+      
       })
       .catch((error) => { alert("Something went wrong") });
   }
@@ -41,8 +46,8 @@ function App() {
               </Badge>{' '}</>
           )}
         <div className="container padding">
-          <h1>Web 3 Pigeon</h1>
-          <h2>Automate your Web3 Actions effortlessly</h2>
+          <h1>Apps_home</h1>
+          <h2>Apps</h2>
           <p>-</p>
         </div>
 
@@ -52,4 +57,4 @@ function App() {
   );
 }
 
-export default App;
+export default Apps_home;
