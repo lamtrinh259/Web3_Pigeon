@@ -16,7 +16,7 @@ let random_num = 0;
 //         console.log(error);
 //     })
 
-async function getBTCPriceBitfinex() {
+export async function getBTCPriceBitfinex() {
   // "let" is block-scoped, meaning it's only accessible within {} brackets
   let req = axios.get(`${baseUrl}/${pathParams}?${queryParams}`);
   let result = await req;
