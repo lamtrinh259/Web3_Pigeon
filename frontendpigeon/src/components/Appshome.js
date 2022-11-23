@@ -3,6 +3,7 @@ import { Contract, ethers } from "ethers";
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import "./Appconnect.css";
+import AppsCard from "./AppsCard"
 import { useNavigate } from "react-router-dom";
 
 
@@ -46,9 +47,15 @@ function Apps_home() {
               </Badge>{' '}</>
           )}
         <div className="container padding">
-          <h1>Apps_home</h1>
-          <h2>Apps</h2>
-          <p>-</p>
+          <h1>Appshome</h1>
+          <h2>GM!</h2>
+          <h3>Pick an action from the below list to begin automation</h3>
+          <AppsCard Title="Games"/>
+          <AppsCard Title="Airdrop"/>
+          <AppsCard Title="Trading"/>
+          <AppsCard Title="DAO Ops"/>
+          <AppsCard Title="Payment"/>
+          <AppsCard Title="Custom"/>
         </div>
 
       </div>

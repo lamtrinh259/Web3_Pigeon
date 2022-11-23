@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 // import './index.css';
 // import App from './App';
 import Appconnect from './components/Appconnect'
+import { Dapp } from './components/Dapp';
 import Appshome from "./components/Appshome";
 import {
   BrowserRouter,
@@ -13,26 +14,13 @@ import {
 // We import bootstrap here, but you can remove if you want
 import "bootstrap/dist/css/bootstrap.css";
 
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App'
-// import './index.css'
-// import {BrowserRouter } from "react-router-dom";
-
-//   ReactDOM.createRoot(document.getElementById('root')).render(
-//     <React.StrictMode>
-//      <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//     </React.StrictMode>
-//   )
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={  <Appconnect />}>
+      {/* <Route path="/" element={  <Dapp />}> */}
         {/* *nested under app */}
         {/* <Route index element ={<CoinsHome />}/>
         <Route path="/CoinsHome/:id" element={<CoinsCard/>}/>

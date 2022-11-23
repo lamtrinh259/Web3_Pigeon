@@ -11,12 +11,7 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const [account, setAccount] = useState("");
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
-  const navigate = useNavigate();
 
-  const handleCoinClick = () => {
-    navigate(`/Apps_home`);
-
-  }
   useEffect(() => {
     if (window.ethereum) {
       setIsWalletInstalled(true);
@@ -24,7 +19,10 @@ function App() {
     }
   }, []);
 
-
+  const navigate = useNavigate();
+  // const handleClick = () => {
+  //   navigate(`/Apps_home`);
+  // }
   async function connectWallet() {
     window.ethereum.request({ method: "eth_requestAccounts", })
       .then((accounts) => {
