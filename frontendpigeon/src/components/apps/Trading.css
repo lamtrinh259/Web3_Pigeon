@@ -17,3 +17,33 @@
     color: white;
     border: 1px solid  blue;
    }
+
+   .formdim{
+    display: flex;
+    display: inline-block;
+    /* width: 100%; */
+    /* width: 200px; */
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+
+   }
+
+   .center{
+    align-items: center;
+   }
+
+   .select{
+    margin-left: 20px; 
+   }
+
+   /* .alignleft{
+    display: flex;
+
+   } */
+   .inputDeposit{
+    width: 150px;
+   }
+   .padding{
+    padding: 5px;
+   }
