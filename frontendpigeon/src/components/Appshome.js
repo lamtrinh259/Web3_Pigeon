@@ -1,15 +1,14 @@
+import './Appshome.css';
 import React, { useEffect, useState } from "react";
 import { Contract, ethers } from "ethers";
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import "./Appconnect.css";
-import AppsCard from "./AppsCard"
+import { Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+// import image from './llama_cropped.png'
 
 
-
-
-function Apps_home() {
+function Appshome() {
   const [account, setAccount] = useState("");
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
 
@@ -17,7 +16,7 @@ function Apps_home() {
   useEffect(() => {
     if (window.ethereum) {
       setIsWalletInstalled(true);
-    //   setCurrentNetwork(window.ethereum.networkVersion);
+      //   setCurrentNetwork(window.ethereum.networkVersion);
     }
   }, []);
 
@@ -26,9 +25,8 @@ function Apps_home() {
     window.ethereum.request({ method: "eth_requestAccounts", })
       .then((accounts) => {
         setAccount(accounts[0])
-        console.log("account",accounts)
-          navigate(`/Apps`);
-      
+        console.log("account", accounts)
+
       })
       .catch((error) => { alert("Something went wrong") });
   }
@@ -36,8 +34,30 @@ function Apps_home() {
 
   return (
     <>
-      <div className='container center'>
-        <br />
+      <div className='home_top'>
+        <nav
+          style={{
+            // borderTop: "solid 1px",
+            // borderBottom: "solid 1px",
+            // paddingBottom: "1rem",
+          }}
+        >
+          {/* <img src={image} alt="" height="100px" className='inline_block' style={{ marginTop: 10 } }></img> */}
+          {/* <div className='margin_button'> */}
+          <div>
+            <Link to="/" className="buttonCSS " style={{ textDecoration: 'none' }} > Home </Link> {" "}
+          </div>
+          </nav>
+          {/* <nav>
+          <Link to="watchlist" className="buttonCSS" style={{ textDecoration: 'none' }}>Watchlist</Link>
+          </nav> */}
+          {/* </div> */}
+
+        <div className='inline_block pixel_font' style={{ fontSize: 40 }}>Web3 Pigeon</div>
+
+
+
+
         {isWalletInstalled && !account ?
           (<Button onClick={connectWallet}>Connect Wallet</Button>) :
           (!account ? (<p>Install MetaMask</p>) :
@@ -46,22 +66,12 @@ function Apps_home() {
                 {account}
               </Badge>{' '}</>
           )}
-        <div className="container padding">
-          <h1>Appshome</h1>
-          <h2>GM!</h2>
-          <h3>Pick an action from the below list to begin automation</h3>
-          <AppsCard Title="Games"/>
-          <AppsCard Title="Airdrop"/>
-          <AppsCard Title="Trading"/>
-          <AppsCard Title="DAO Ops"/>
-          <AppsCard Title="Payment"/>
-          <AppsCard Title="Custom"/>
-        </div>
-
       </div>
+
+      <Outlet />
 
     </>
   );
 }
 
-export default Apps_home;
+export default Appshome;

@@ -5,6 +5,8 @@ import ReactDOM from "react-dom/client";
 import Appconnect from './components/Appconnect'
 import { Dapp } from './components/Dapp';
 import Appshome from "./components/Appshome";
+import Appsindex from './components/Appsindex';
+import Trading from './components/apps/Trading';
 import {
   BrowserRouter,
   Routes,
@@ -21,14 +23,16 @@ root.render(
     <Routes>
       <Route path="/" element={  <Appconnect />}>
       {/* <Route path="/" element={  <Dapp />}> */}
-        {/* *nested under app */}
-        {/* <Route index element ={<CoinsHome />}/>
-        <Route path="/CoinsHome/:id" element={<CoinsCard/>}/>
-        <Route path="/Watchlist" element={<Watchlist />}> */}
         </Route>
-
-        <Route path="/Apps" element={<Appshome/>}></Route>
+      <Route path="/Apps" element={  <Appshome />}>
+        {/* *nested under app */}
+        <Route index element ={<Appsindex />}/>
+        <Route path="/Apps/Trading" element={<Trading />}>
+        </Route>
         
+      </Route>
+
+
     </Routes>
   </BrowserRouter>
 )

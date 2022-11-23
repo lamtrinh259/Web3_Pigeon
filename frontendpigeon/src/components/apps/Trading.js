@@ -2,38 +2,29 @@ import React, { useEffect, useState } from "react";
 import { Contract, ethers } from "ethers";
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import "./Appconnect.css";
 import { useNavigate } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+import "./Trading.css"
 
-
-
-
-function App() {
+function Trading() {
   const [account, setAccount] = useState("");
-
-
-  const navigate = useNavigate();
-  const launchApp = () => {
-    navigate(`/Apps`);
-  }
 
 
   return (
     <>
       <div className='container center'>
         <br />
-            <Button onClick={launchApp}>Launch App</Button>
 
         <div className="container padding">
-          <h1>Web 3 Pigeon</h1>
-          <h2>Automate your Web3 Actions effortlessly</h2>
-          <p>-</p>
+          <h1>TRADING</h1>
+
         </div>
-
+        <Link className="nav-link" to="/Apps" style={{ textDecoration: 'none' }} className="buttonCSS_2"> Back to Apps</Link>
       </div>
-
+  
+      
     </>
   );
 }
 
-export default App;
+export default Trading;
