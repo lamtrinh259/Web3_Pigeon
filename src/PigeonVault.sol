@@ -11,8 +11,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract PigeonVault is ERC721Holder, ERC1155Holder, Ownable{
-    event Withdraw();
-    event Deposit();
+    event Withdraw(uint256 amount, address token, uint256 tokenID, bool isERC20);
+    event DepositedETH(uint256 amount);
     address executer;
 
     address WETH = address(0);
@@ -36,9 +36,9 @@ contract PigeonVault is ERC721Holder, ERC1155Holder, Ownable{
     enum Exchange{
         Quickswap
     }
-    event RuleCreated();
-    event RuleDevelted();
-    event RuleExecuted();
+    event RuleCreated(uint256 ruleID);
+    event RuleDeleted(uint256 ruleID);
+    event RuleExecuted(uint256 ruleID, uint256 currentExection, address executer);
     modifier onlyExecuterOrOwner{
         require(msg.sender == executer /*|| isOwner(msg.sender)*/, "not allowed");
         _;
@@ -67,12 +67,12 @@ contract PigeonVault is ERC721Holder, ERC1155Holder, Ownable{
     function createRule(Rule memory rule) external payable onlyOwner{
         rules.push(rule);
         numOfRules++;
-        emit RuleCreated();
+        emit RuleCreated(numOfRules--);
     }
 
     function deleteRule(uint256 ruleID) external onlyOwner{
         rules[ruleID].active = false;
-        emit RuleDevelted();
+        emit RuleDeleted(ruleID);
     }
 
 
@@ -100,7 +100,7 @@ contract PigeonVault is ERC721Holder, ERC1155Holder, Ownable{
             //Quickswap trade
         }
 
-       emit RuleExecuted();
+       emit RuleExecuted(ruleID, rules[ruleID].currentExecution, msg.sender);
 
     }
 
@@ -109,16 +109,20 @@ contract PigeonVault is ERC721Holder, ERC1155Holder, Ownable{
             IERC20(tokenAddress).transfer(owner(), amount);
         } else {
             IERC721(tokenAddress).safeTransferFrom(address(this), owner(), tokenID, "");
-        } 
+        }
+        emit Withdraw(amount, tokenAddress, tokenID, isERC20); 
     }
 
     function withdrawETH(uint256 amount) external onlyOwner{
        (bool status, bytes memory retMsg) = payable(address(owner())).call{value:amount}("");
         require(status, string(retMsg));
+        emit Withdraw(amount, address(0), 0, false); 
     }
 
 
 
-    receive() external payable {}
+    receive() external payable {
+       emit DepositedETH(msg.value);
+    }
 
 }
