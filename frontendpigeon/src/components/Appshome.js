@@ -3,9 +3,9 @@ import { Contract, ethers } from "ethers";
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import "./Appconnect.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// const navigate = useNavigate();
+
 
 
 function Apps_home() {
@@ -20,13 +20,13 @@ function Apps_home() {
     }
   }, []);
 
-
+  const navigate = useNavigate();
   async function connectWallet() {
     window.ethereum.request({ method: "eth_requestAccounts", })
       .then((accounts) => {
         setAccount(accounts[0])
         console.log("account",accounts)
-          navigate(`/apps_home`);
+          navigate(`/Apps`);
       
       })
       .catch((error) => { alert("Something went wrong") });
