@@ -1,3 +1,4 @@
+
 // const {ethers} = require ("ethers");
 import { ethers } from "ethers";
 import { ChainId, Token, WETH, Fetcher, Route } from "@uniswap/sdk";
@@ -6,9 +7,9 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 // console.log(process.env);
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
 // note that you may want/need to handle this async code differently,
 // for example if top-level await is not an option
@@ -17,16 +18,21 @@ function sleep(ms) {
  * from the contract (Quickswap docs) directly: Lam
  * Params:
  */
+
+
 function fetchWETHUSDCDataQuickswap() {
   const USDC = new Token(
     ChainId.MAINNET,
     "0x2791bca1f2de4661ed88a30c99a7a9449aa84174", // USDC
+
     18
   );
   console.log(USDC.chainId)
 
   const WETH = new Token(
     ChainId.MAINNET,
+
+
     "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619", // WETH
     18
   );
@@ -48,3 +54,4 @@ while (true) {
   fetchWETHUSDCDataQuickswap();
   sleep(5000); // 'Sleep' every 5 seconds
 }
+main()

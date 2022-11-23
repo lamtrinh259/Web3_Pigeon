@@ -21,8 +21,15 @@ async function getBTCPriceBitfinex() {
   let req = axios.get(`${baseUrl}/${pathParams}?${queryParams}`);
   let result = await req;
   let data = result.data;
+  // console.log("data",data);
   return data
 }
 
-BTCPrice = getBTCPriceBitfinex();
-console.log(BTCPrice);
+// BTCPrice = getBTCPriceBitfinex();
+// console.log(BTCPrice); // console.log()
+
+const promise3 = Promise.resolve(getBTCPriceBitfinex());
+promise3.then((value3) => {
+  console.log("value3", value3);
+});
+
