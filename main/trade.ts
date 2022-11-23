@@ -50,15 +50,16 @@ console.log("WETH[DAI.chainId]", WETH[DAI.chainId])
 // // // note that you may want/need to handle this async code differently,
 // // // for example if top-level await is not an option
 
-const fetchPair = async () => {
-  const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId, provider)
-  console.log("pair", pair);
-  return pair
-}
-const promise1 = Promise.resolve(fetchPair());
-promise1.then((value) => {
-  console.log("value", value);
-});
+// Comment out for now so other functions will run for testing
+// const fetchPair = async () => {
+//   const pair = await Fetcher.fetchPairData(DAI, WETH[DAI.chainId, provider)
+//   console.log("pair", pair);
+//   return pair
+// }
+// const promise1 = Promise.resolve(fetchPair());
+// promise1.then((value) => {
+//   console.log("value", value);
+// });
 // const route = new Route([pair], WETH[DAI.chainId])
 
 // const amountIn = '1000000000000000000' // 1 WETH
