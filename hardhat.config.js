@@ -5,6 +5,8 @@ require("hardhat-deploy")
 // require("hardhat-gas-reporter")
 // require("hardhat-contract-sizer")
 require("dotenv").config()
+import "hardhat-preprocessor";
+import fs from "fs";
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -121,4 +123,12 @@ module.exports = {
     mocha: {
         timeout: 500000, // 500 seconds max for running tests
     },
+}
+
+function getRemappings() {
+  return fs
+    .readFileSync("remappings.txt", "utf8")
+    .split("\n")
+    .filter(Boolean) // remove empty lines
+    .map((line) => line.trim().split("="));
 }
