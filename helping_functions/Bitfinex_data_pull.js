@@ -1,6 +1,6 @@
 "use strict";
 
-const axios = require('axios')
+import axios from 'axios'
 
 const baseUrl = "https://api-pub.bitfinex.com/v2/";
 const pathParams = "tickers"
@@ -21,15 +21,16 @@ export async function getBTCPriceBitfinex() {
   let req = axios.get(`${baseUrl}/${pathParams}?${queryParams}`);
   let result = await req;
   let data = result.data;
-  // console.log("data",data);
-  return data
+  // console.log('the JSON where the result is store is', data[1])
+  console.log('Last traded price of BTC is', data[1][7])
+  return data[1][7]
 }
 
 // BTCPrice = getBTCPriceBitfinex();
 // console.log(BTCPrice); // console.log()
 
-const promise3 = Promise.resolve(getBTCPriceBitfinex());
-promise3.then((value3) => {
-  console.log("value3", value3);
-});
-
+// for testing
+// const promise3 = Promise.resolve(getBTCPriceBitfinex());
+// promise3.then((value3) => {
+//   console.log("value3", value3);
+// });
