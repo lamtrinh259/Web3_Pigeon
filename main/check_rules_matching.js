@@ -1,5 +1,6 @@
-import { createNewUserAndTask , addNewTaskToExistingUsers, getTasksOfAUser } from "./get_users_tasks.js";
-// import { getBTCPriceBitfinex } from "../helping_functions/Bitfinex_data_pull.js"
+import {createNewUserAndTask , addNewTaskToExistingUsers, getTasksOfAUser} from "./get_users_tasks.js";
+import { getBTCPriceBitfinex } from "../helping_functions/Bitfinex_data_pull.js"
+import fs from 'fs'
 
 let users = []
 const rule_1 = 'Eat the ice cream'
@@ -31,7 +32,19 @@ users = createNewUserAndTask("0x123456", "Buy a vanilla ice cream")
 users = addNewTaskToExistingUsers("0x123456", "Eat the ice cream")
 users = createNewUserAndTask("0x7777777", "Buy a dog")
 users = addNewTaskToExistingUsers("0x7777777", "Take the dog for a walk")
-
 console.log(users)
+
+let liveBTCPrice = getBTCPriceBitfinex()
+const promise = Promise.resolve(liveBTCPrice);
+promise.then((result) => {
+  // For testing
+  console.log(result)
+  fs.writeFile('./sampleBTCprice.txt', result, (err) => {
+  // In case of a error throw err.
+  if (err) throw err;
+  })
+});
+
+
 check_rules() // run at the beginning
 setInterval(check_rules, 30*1000); // Every 30 seconds
