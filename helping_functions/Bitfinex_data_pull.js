@@ -21,7 +21,7 @@ export async function getBTCPriceBitfinex() {
   let req = axios.get(`${baseUrl}/${pathParams}?${queryParams}`);
   let result = await req;
   let data = result.data;
-  // console.log('the JSON where the result is store is', data[1])
+  console.log('the JSON where the result is store is', data[1])
   console.log('Last traded price of BTC is', data[1][7])
   return data[1][7]
 }
