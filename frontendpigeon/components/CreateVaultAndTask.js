@@ -11,6 +11,7 @@ export default function CreateVault() {
   const chainId = parseInt(chainIdHex) // Get the integer value of chainIdHex
   const factoryAddress = chainId in contractAddresses ? contractAddress[chainId][0] : null // get the factory contract address, else assign null
   const dispatch = useNotification()
+  const [vaultContents, setVaultContents] = useState("0")
 
   const {runContractFunction: createVault} = useWeb3Contract({
     // Need ABI and contract address and function name & params
