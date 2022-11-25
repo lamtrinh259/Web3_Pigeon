@@ -1,0 +1,84 @@
+.buttonCSS_2 {
+    margin-top: 200px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    font-weight: bolder;
+    background: rgb(255, 255, 255);
+    color: blue;
+    /* font-style: italic; */
+    padding: 4px;
+    padding-right: 5px;
+    padding-left: 8px;
+    font-size: 17px;
+   }
+   
+   .buttonCSS_2:hover {
+    background-color: blue;
+    color: white;
+    border: 1px solid  blue;
+   }
+
+   .formdim{
+    display: flex;
+    display: inline-block;
+    /* width: 100%; */
+    /* width: 200px; */
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+
+   }
+
+   .center{
+    align-items: center;
+   }
+
+   .select{
+    margin-left: 20px; 
+   }
+
+   /* .alignleft{
+    display: flex;
+
+   } */
+   .inputDeposit{
+    width: 150px;
+   }
+   .padding{
+    padding: 5px;
+   }
+
+   .addcondition{
+    width: 100%;
+    border: 1px solid green;
+   }
+
+   .buyCondition{
+    margin-top: 10px;
+    border: 1px solid blue;
+    font-weight: bold;
+    width: 400px;
+   }
+   .ticker_size{
+    font-size: 18px;
+  }
+
+  .inline_block{
+    display: inline-block;
+  }
+
+  .listTicker{
+    /* display: flex; */
+    width: 100%;
+    /* justify-content: space-around */
+  }
+
+  .Final_box{
+    display: flex;
+    margin-top: 50px;
+    border: 2px solid pink;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center
+
+  }
