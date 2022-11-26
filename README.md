@@ -12,3 +12,5 @@ Simple Figma prototype (clickable) of the dapp is here: https://www.figma.com/pr
 Live demo app is deployed on: https://web3-pigeon-frontend-60ade0.spheron.app/ (thanks to Spheron)
 
 Video demo can be viewed on YouTube here: https://www.youtube.com/watch?v=jpQ4OYiFgT0
+
+Pitch deck (live) on Figma: https://www.figma.com/proto/ASKZQY0VqARHTJoaTBfLpH/Pigeon---ETHVietnam?node-id=236%3A5&scaling=contain&page-id=231%3A15
